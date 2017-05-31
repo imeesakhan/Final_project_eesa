@@ -149,12 +149,12 @@ add_executable(turtle_controller src/turtle_controller.cpp)
 add_dependencies(turtle_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turtle_controller  ${catkin_LIBRARIES} )
 
+include_directories(include ${catkin_INCLUDE_DIRS})
 
-#service and client
-add_executable(add_two_ints_server src/add_two_ints_server.cpp)
-target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_server lions_tutorial_gencpp)
-add_executable(add_two_ints_client src/add_two_ints_client.cpp)
-target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_client lions_tutorial_gencpp)
-add_executable(pushup_marker src/pushup_marker.cpp)
+add_executable(Heartbeat src/Heartbeat.cpp)
+target_link_libraries(Heartbeat ${catkin_LIBRARIES})
+add_dependencies(Heartbeat beginner_tutorials_generate_messages_cpp)
+
+add_executable(HeartbeatListener src/HeartbeatListener.cpp)
+target_link_libraries(HeartbeatListener ${catkin_LIBRARIES})
+add_dependencies(HeartbeatListener beginner_tutorials_generate_messages_cpp)
