@@ -1,15 +1,4 @@
-#include <ros/ros.h>
-#include "std_msgs/Bool.h"
-
-ros::Publisher chatter_pub;
-
-
-void timerCallback(const ros::TimerEvent&)
-{
-std_msgs::Bool beat;
-beat.data=true;
-chatter_pub.publish(beat);
-}
+#include "../include/hearbeah.h"
 
 int main(int argc, char **argv)
 {
